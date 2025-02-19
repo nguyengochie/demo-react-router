@@ -6,6 +6,8 @@ import Laptop from './component/Laptop';
 import Desktop from './component/Desktop';
 import ListProduct from './component/ListProduct';
 import PrivateHome from './component/PrivateHome';
+import DetailProduct from './component/DetailProduct';
+import Users from './component/Users';
 const LazyBlog = lazy(() => import("./component/Blog"));
 
 function App() {
@@ -30,6 +32,13 @@ function App() {
         <Route index element={<h1>Trang private 1</h1>} />
         <Route path='two' element={<h1>Trang private 2</h1>} />
         <Route path='three' element={<h1>Trang private 3</h1>} />
+      </Route>
+
+      <Route path='/product/detail/:id' element={<DetailProduct />} />
+
+      <Route path='/user' element={<Users />} >
+        <Route path='profile' element={<h1>Profile</h1>} />
+        <Route path='orders' element={<h1>Orders</h1>} />
       </Route>
 
       <Route path="*" element={<h1>Not Found!</h1>} />
