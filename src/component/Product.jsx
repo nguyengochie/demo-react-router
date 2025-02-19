@@ -39,6 +39,10 @@ const Product = () => {
             })
     }
 
+    // useEffect(()=>{
+    //     //fetchAPI
+    // },[key])
+
     return (
         <div>
             <h1>Product</h1>

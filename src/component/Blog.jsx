@@ -12,14 +12,15 @@ const BLOGS = [
     },
 ]
 const Blog = () => {
-    const { code, hello } = useParams();
+    const { code } = useParams();
 
     const getBlog = () => {
         const index = parseInt(code);
         const blog = BLOGS[index - 1];
+        console.log("blog", index - 1);
 
         return <div>
-            <h2>{blog.name}</h2>
+            <h2>{blog?.name}</h2>
         </div>
 
 
