@@ -25,11 +25,13 @@ const Product = () => {
     const [inputValue, setInputvalue] = useState("");
     const [searchValue, setSearchValue] = useState("");
 
+    // set gia trị search lên URL
     const onClickSearch = () => {
         setSearchParam({ key: inputValue });
     }
 
     const renderProducts = () => {
+        // filter theo searchValue
         return PRODUCTS?.filter((prd) => !searchValue ? true : prd?.name?.includes(searchValue))
             ?.map((prd) => {
                 return <div key={prd.id}>
@@ -38,6 +40,7 @@ const Product = () => {
             })
     }
 
+    // key thay đổi sẽ set searchValue
     useEffect(() => {
         setSearchValue(key);
     }, [key])
